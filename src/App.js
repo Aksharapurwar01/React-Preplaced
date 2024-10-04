@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import RegistrationForm from "./components/controlled and uncontrolled/ControlledComponenet";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <nav>
+          <ul style={{ display: "flex", flexDirection: "row", gap: "20px" }}>
+            <li>
+              <Link to="/">Controlled component</Link>
+            </li>
+            <li>
+              <Link to="/add-contact">UnControlled Component</Link>
+            </li>
+            <li>
+              <Link to="/contact-card">HOC</Link>
+            </li>
+            <li>
+              <Link to="/student">Use Callback</Link>
+            </li>
+            <li>
+              <Link to="/scroll">Use Memo</Link>
+            </li>
+            <li>
+              <Link to="/debounce">Use effect</Link>
+            </li>
+            <li>
+              <Link to="/callback">Use Layout Effect</Link>
+            </li>
+            <li>
+              <Link to="/callback">Use Context</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<RegistrationForm />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
