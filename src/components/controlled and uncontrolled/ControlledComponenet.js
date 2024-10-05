@@ -95,7 +95,6 @@ const RegistrationForm = () => {
       </label>
       {error.confirmPassword}
       <button type="submit">Submit</button>
-      <button type="reset">Reset</button>
     </form>
   );
 };

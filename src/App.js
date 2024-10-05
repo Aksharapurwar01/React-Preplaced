@@ -9,6 +9,7 @@ import UseContextHook from "./components/useContext/useContextHook";
 import Timer from "./components/useEffect/useEffect";
 import UseMemoComponenet from "./components/usememo/UseMemo";
 import CallbackComponent from "./components/useCallback/UseCallback";
+import UseeParentComponent from "./components/useEffect/useEffect";
 
 function App() {
   const AuthenticatedUncontolled = withAuth(FileUploadForm);
@@ -48,7 +49,7 @@ function App() {
           <Route path="/uncontrol" element={<AuthenticatedUncontolled/>}/>
           <Route path="/usereducer" element={<UseReducerHook/>} />
           <Route path="/useContext" element={<UseContextHook/>} />
-          <Route path="/effect" element={<Timer/>} />
+          <Route path="/effect" element={<UseeParentComponent/>} />
           <Route path="/memo" element={<UseMemoComponenet/>} />
           <Route path="/callback" element={<CallbackComponent/>} />
 
