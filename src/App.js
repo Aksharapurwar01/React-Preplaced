@@ -4,7 +4,11 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import RegistrationForm from "./components/controlled and uncontrolled/ControlledComponenet";
 import FileUploadForm from "./components/controlled and uncontrolled/UncontrolledComponent";
 import withAuth from "./components/hoc/withAuth";
-import RegistrationFormm from "./components/controlled and uncontrolled/example";
+import UseReducerHook from "./components/useReducer/useReducer";
+import UseContextHook from "./components/useContext/useContextHook";
+import Timer from "./components/useEffect/useEffect";
+import UseMemoComponenet from "./components/usememo/UseMemo";
+import CallbackComponent from "./components/useCallback/UseCallback";
 
 function App() {
   const AuthenticatedUncontolled = withAuth(FileUploadForm);
@@ -23,25 +27,31 @@ function App() {
               <Link to="/contact-card">HOC</Link>
             </li>
             <li>
-              <Link to="/student">Use Callback</Link>
+              <Link to="/callback">Use Callback</Link>
             </li>
             <li>
-              <Link to="/scroll">Use Memo</Link>
+              <Link to="/memo">Use Memo</Link>
             </li>
             <li>
-              <Link to="/debounce">Use effect</Link>
+              <Link to="/effect">Use effect</Link>
             </li>
             <li>
-              <Link to="/callback">Use Layout Effect</Link>
+              <Link to="/useContext">Use Context</Link>
             </li>
             <li>
-              <Link to="/callback">Use Context</Link>
+              <Link to="/usereducer">Use Reducer</Link>
             </li>
           </ul>
         </nav>
         <Routes>
           <Route path="/form" element={<RegistrationForm />} />
           <Route path="/uncontrol" element={<AuthenticatedUncontolled/>}/>
+          <Route path="/usereducer" element={<UseReducerHook/>} />
+          <Route path="/useContext" element={<UseContextHook/>} />
+          <Route path="/effect" element={<Timer/>} />
+          <Route path="/memo" element={<UseMemoComponenet/>} />
+          <Route path="/callback" element={<CallbackComponent/>} />
+
           <Route path="/" element={<>Login</>}/>
         </Routes>
       </Router>
