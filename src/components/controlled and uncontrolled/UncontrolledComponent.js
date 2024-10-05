@@ -1,33 +1,27 @@
 import React, { useRef } from "react";
+// import withAuth from "../hoc/withAuth";
 
-function FileUploadForm() {
+function FileUpload(){
+    const fileref = useRef();
+    const handleSubmit=(event)=>{
+        event.preventDefault();
+        const file = fileref.current.files[0];
+        if(file){
+            console.log({file})
+        }
 
-const fileInputRef = useRef();
-
-const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const file = fileInputRef.current.files[0];
-
-    if (file) {
-    console.log("Selected File:", file.name);
-    console.log("File Size:", file.size, "bytes");
-    } else {
-    console.log("No file selected");
     }
-};
 
-return (
-    <form onSubmit={handleSubmit}>
-    <div>
-        <label>
-        Upload File:
-        <input type="file" ref={fileInputRef} />
-        </label>
-    </div>
-    <button type="submit">Upload</button>
-    </form>
-);
+    return(
+        <form onSubmit={handleSubmit}>
+
+        <label>File</label>
+        <input type="file" ref={fileref}/>
+        <button type="submit">Upload</button>
+        </form>
+    )
 }
 
-export default FileUploadForm;
+export default FileUpload;
+
+
