@@ -10,6 +10,8 @@ import Timer from "./components/useEffect/useEffect";
 import UseMemoComponenet from "./components/usememo/UseMemo";
 import CallbackComponent from "./components/useCallback/UseCallback";
 import UseeParentComponent from "./components/useEffect/useEffect";
+import Accordion from "./machine-coding/accordian";
+import Stepper from "./machine-coding/stepper/Steepper";
 
 function App() {
   const AuthenticatedUncontolled = withAuth(FileUploadForm);
@@ -42,6 +44,12 @@ function App() {
             <li>
               <Link to="/usereducer">Use Reducer</Link>
             </li>
+            <li>
+              <Link to="/accordion">Accordion</Link>
+            </li>
+            <li>
+              <Link to="/stepper">Checkout</Link>
+            </li>
           </ul>
         </nav>
         <Routes>
@@ -52,7 +60,8 @@ function App() {
           <Route path="/effect" element={<UseeParentComponent/>} />
           <Route path="/memo" element={<UseMemoComponenet/>} />
           <Route path="/callback" element={<CallbackComponent/>} />
-
+          <Route path="/accordion" element={<Accordion/>} />
+          <Route path="/stepper" element={<Stepper/>} />
           <Route path="/" element={<>Login</>}/>
         </Routes>
       </Router>

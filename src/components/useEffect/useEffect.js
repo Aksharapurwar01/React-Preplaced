@@ -2,8 +2,7 @@
 // subscribing to external events, or manually changing the DOM. It combines the functionality of componentDidMount, 
 // componentDidUpdate, and componentWillUnmount in class components.
 import { useEffect, useState } from "react";
-import axios from 'axios';
-import fetch from "node-fetch";
+// import fetch from "node-fetch";
 
 const useFetch = ( url ) => {
   const [data, setData] = useState(null); // State to hold fetched data
