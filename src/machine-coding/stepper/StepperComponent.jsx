@@ -13,7 +13,8 @@ function StepperComponent({ checkoutSteps = {} }) {
   useEffect(() => {
     setMargins({
       marginLeft: stepRef.current[0].offsetWidth / 2 || 0,
-      marginRight: stepRef.current[checkoutSteps.length - 1].offsetWidth / 2 || 0
+      marginRight:
+        stepRef.current[checkoutSteps.length - 1].offsetWidth / 2 || 0,
     });
 
     console.log(stepRef.current[checkoutSteps.length - 1].offsetWidth);

@@ -1,0 +1,21 @@
+.folder {
+    cursor: pointer; /* Change the cursor to indicate it's clickable */
+    display: flex;
+    align-items: center; /* Center the icon and text vertically */
+}
+
+
+.file {
+    display: flex;
+    align-items: center; /* Center the icon and text vertically */
+}
+
+.subfolder {
+    display: block;
+    margin-left: 20px; /* Indentation for subfolders */
+}
+
+.inputContainer{
+    display: flex;
+    align-items: center;
+}

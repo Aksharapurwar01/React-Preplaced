@@ -12,6 +12,10 @@ import CallbackComponent from "./components/useCallback/UseCallback";
 import UseeParentComponent from "./components/useEffect/useEffect";
 import Accordion from "./machine-coding/accordian";
 import Stepper from "./machine-coding/stepper/Steepper";
+import InfiniteScrollComponent from "./machine-coding/infinite-scroller/IfiniteScroller";
+import FileExplorer from "./machine-coding/file-explorer/FileExplorer";
+import TODO from "./machine-coding/to-do/TODO";
+import TelephoneFormatter from "./machine-coding/telephone-formatter/TelephoneFormatter";
 
 function App() {
   const AuthenticatedUncontolled = withAuth(FileUploadForm);
@@ -19,7 +23,7 @@ function App() {
     <div className="App">
       <Router>
         <nav>
-          <ul style={{ display: "flex", flexDirection: "row", gap: "20px" }}>
+        <ul style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", gap: "20px", padding: "0", listStyleType: "none" }}>
             <li>
               <Link to="/form">Controlled component</Link>
             </li>
@@ -50,6 +54,18 @@ function App() {
             <li>
               <Link to="/stepper">Checkout</Link>
             </li>
+            <li>
+              <Link to="/scroll">Scroll</Link>
+            </li>
+            <li>
+              <Link to="/folder">File Explorer</Link>
+            </li>
+            <li>
+              <Link to="/todo">To Do</Link>
+            </li>
+            <li>
+              <Link to="/telephone">telephone</Link>
+            </li>
           </ul>
         </nav>
         <Routes>
@@ -62,6 +78,10 @@ function App() {
           <Route path="/callback" element={<CallbackComponent/>} />
           <Route path="/accordion" element={<Accordion/>} />
           <Route path="/stepper" element={<Stepper/>} />
+          <Route path="/scroll" element={<InfiniteScrollComponent/>} />
+          <Route path="/folder" element={<FileExplorer/>} />
+          <Route path="/todo" element={<TODO/>} />
+          <Route path="/telephone" element={<TelephoneFormatter/>} />
           <Route path="/" element={<>Login</>}/>
         </Routes>
       </Router>
